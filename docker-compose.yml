@@ -9,6 +9,8 @@ services:
       MYSQL_DATABASE: employee_db
     ports:
       - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
       interval: 5s
@@ -23,7 +25,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      DB_HOST: mysqldb
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/employee_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: rootpassword
     depends_on:
@@ -31,6 +33,9 @@ services:
         condition: service_healthy
     networks:
       - app-network
+
+volumes:
+  mysql-data:
 
 networks:
   app-network:
