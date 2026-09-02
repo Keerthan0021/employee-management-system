@@ -1,0 +1,32 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Pull repository code onto the Ubuntu runner
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    # Step 2: Install Java 17 (Temurin distribution) and enable dependency caching
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+
+    # Step 3: Ensure the Maven wrapper script has Linux execution rights
+    - name: Grant execute permission for Maven Wrapper
+      run: chmod +x mvnw
+
+    # Step 4: Compile code and run the 11 tests
+    - name: Build and Test with Maven
+      run: ./mvnw clean test
