@@ -1,5 +1,7 @@
 # 🚀 Spring Boot Employee Management REST API
 
+[![Java CI with Maven](https://github.com/Keerthan0021/employee-management-system/actions/workflows/ci.yml/badge.svg)](https://github.com/Keerthan0021/employee-management-system/actions/workflows/ci.yml)
+
 A robust, production-ready RESTful API built with Spring Boot 3, Spring Data JPA, MySQL, and Swagger/OpenAPI documentation.
 
 ## ✨ Key Features
