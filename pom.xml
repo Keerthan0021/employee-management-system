@@ -19,6 +19,26 @@
 	</properties>
 
 	<dependencies>
+	<!-- Springdoc OpenAPI Starter UI -->
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+    <version>2.5.0</version>
+</dependency>
+
+<!-- Springdoc Starter Common -->
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-common</artifactId>
+    <version>2.5.0</version>
+</dependency>
+
+<!-- Springdoc Starter WebMVC API -->
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+    <version>2.5.0</version>
+</dependency>
 	<dependency>
     <groupId>org.springdoc</groupId>
     <artifactId>springdoc-openapi-starter-common</artifactId>
